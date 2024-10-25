@@ -7,7 +7,7 @@ const TestEventsButton = () => {
 
   const handleFetchEvents = async () => {
     try {
-      const response = await axios.get('http://localhost:3002/events');
+      const response = await axios.get('https://cms-vz9f.onrender.com/events');
       console.log(response.data)
       setEvents(response.data); // Set the events state with fetched data
       setError(''); // Clear any previous errors

@@ -42,7 +42,7 @@ const EventForm = () => {
     formDataToSend.append('language', formData.language);  // Add language to form data
 
     try {
-      const response = await axios.post('http://localhost:3002/events', formDataToSend, {
+      const response = await axios.post('https://cms-vz9f.onrender.com/events', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
