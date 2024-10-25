@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 2em;
+  width: 100vw;
+}
+.form-upload{
+  width: 100%;
+}
+.form-upload > div{
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 1em;
+  width: 100%;
+  display: flex;
+}
+.form-upload > form{
+  width: 100%;
+}
+.form-upload > form > div{
+  width: 100%;
+  display: flex;
+  align-items: start;
+  margin-bottom: 0.5em;
+}
+.events-list{
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+.events-list > li{
+  margin: 1em;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 1em;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
