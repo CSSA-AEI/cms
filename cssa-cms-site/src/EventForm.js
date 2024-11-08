@@ -41,7 +41,7 @@ const EventForm = () => {
     formDataToSend.append('location', formData.location);
     formDataToSend.append('poster', formData.poster);
     formDataToSend.append('language', formData.language);  // Add language to form data
-    formDataToSend.append('language', formData.description);
+    formDataToSend.append('description', formData.description);
 
     try {
       const response = await axios.post('https://cms-vz9f.onrender.com/events', formDataToSend, {
