@@ -9,6 +9,7 @@ const EventForm = () => {
     location: '',
     poster: null,
     language: 'English',  // Default language selection
+    description: '',
   });
 
   const handleChange = (e) => {
@@ -40,6 +41,7 @@ const EventForm = () => {
     formDataToSend.append('location', formData.location);
     formDataToSend.append('poster', formData.poster);
     formDataToSend.append('language', formData.language);  // Add language to form data
+    formDataToSend.append('language', formData.description);
 
     try {
       const response = await axios.post('https://cms-vz9f.onrender.com/events', formDataToSend, {
@@ -109,13 +111,21 @@ const EventForm = () => {
           required
         />
       </div>
-
       <div>
         <label>Language:</label>
         <select name="language" value={formData.language} onChange={handleChange} required>
           <option value="English">English</option>
           <option value="French">French</option>
         </select>
+      </div>
+      <div>
+        <label>Description :</label>
+        <input
+          type="text"
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+        />
       </div>
 
       <button type="submit">Create Event</button>

@@ -82,7 +82,7 @@ app.post('/events', upload.single('poster'), async (req, res) => {
       .webp({ quality: 80 })
       .toBuffer();
 
-    const s3Key = `${req.body.name}_${dayOfUpload.getDate()}_${dayOfUpload.getMonth() + 1}_${dayOfUpload.getFullYear()}.webp`;
+    const s3Key = `${req.body.name}_${dayOfUpload.getDate()}_${dayOfUpload.getMonth() + 1}_${dayOfUpload.getFullYear()}_${req.body.language}.webp`;
     
     const putParameters = {
       Bucket: bucketName,
@@ -107,6 +107,7 @@ app.post('/events', upload.single('poster'), async (req, res) => {
         location: req.body.location,
         language: req.body.language,
         posterUrl: imageUrl,
+        description: req.body.description
     };
 
     const result = await eventsCollection.insertOne(newEvent);

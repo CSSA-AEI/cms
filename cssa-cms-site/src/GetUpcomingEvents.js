@@ -32,6 +32,9 @@ const TestEventsButton = () => {
               Time: {new Date(event.date).toLocaleTimeString()}<br />
               Location: {event.location}<br />
               <img src={event.posterUrl} alt={event.name} style={{ width: '100px', height: 'auto' }} />
+              <div>
+                {event.description}
+              </div>
             </li>
           ))}
         </ul>
